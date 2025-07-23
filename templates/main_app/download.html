@@ -1,0 +1,476 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Download Hero -->
+<section class="download-section">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="display-3 fw-bold mb-4">Descarga Cursor</h1>
+                <p class="lead mb-5">
+                    El editor de código más avanzado con IA integrada. 
+                    Disponible para todas las plataformas principales.
+                </p>
+                
+                <!-- Auto-detect platform -->
+                <div class="auto-detect-platform mb-4">
+                    <div class="detected-platform">
+                        <i class="fab fa-windows"></i>
+                        <span>Hemos detectado que usas <strong id="detected-os">Windows</strong></span>
+                    </div>
+                </div>
+                
+                <!-- Primary Download Button -->
+                <div class="primary-download mb-4">
+                    <a href="#" class="btn btn-primary btn-lg download-btn" data-download="Windows">
+                        <i class="fas fa-download me-2"></i>
+                        <span>Descargar para <span id="primary-os">Windows</span></span>
+                        <small class="d-block mt-1">Versión 1.2.3 • 156 MB</small>
+                    </a>
+                </div>
+                
+                <div class="download-note">
+                    <small class="text-light">
+                        <i class="fas fa-shield-alt me-2"></i>
+                        Descarga gratuita y segura • Sin malware • Actualizaciones automáticas
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Platform Downloads -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Todas las Plataformas</h2>
+            <p class="lead">Cursor está disponible para todas las plataformas principales</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <!-- Windows -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="download-card">
+                    <i class="fab fa-windows"></i>
+                    <h4 class="mb-3">Windows</h4>
+                    <p class="mb-4">Compatible con Windows 10 y 11</p>
+                    
+                    <div class="download-options">
+                        <a href="#" class="btn btn-primary w-100 mb-2 download-btn" data-download="Windows x64">
+                            <i class="fas fa-download me-2"></i>Windows (x64)
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100 download-btn" data-download="Windows Installer">
+                            <i class="fas fa-cog me-2"></i>Instalador MSI
+                        </a>
+                    </div>
+                    
+                    <div class="download-details mt-3">
+                        <small class="text-muted">
+                            Versión: 1.2.3<br>
+                            Tamaño: 156 MB<br>
+                            Requisitos: Windows 10+
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- macOS -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="download-card">
+                    <i class="fab fa-apple"></i>
+                    <h4 class="mb-3">macOS</h4>
+                    <p class="mb-4">Compatible con macOS 10.15+</p>
+                    
+                    <div class="download-options">
+                        <a href="#" class="btn btn-primary w-100 mb-2 download-btn" data-download="macOS Universal">
+                            <i class="fas fa-download me-2"></i>macOS Universal
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100 download-btn" data-download="macOS Intel">
+                            <i class="fas fa-microchip me-2"></i>Solo Intel
+                        </a>
+                    </div>
+                    
+                    <div class="download-details mt-3">
+                        <small class="text-muted">
+                            Versión: 1.2.3<br>
+                            Tamaño: 142 MB<br>
+                            Requisitos: macOS 10.15+
+                        </small>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Linux -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="download-card">
+                    <i class="fab fa-linux"></i>
+                    <h4 class="mb-3">Linux</h4>
+                    <p class="mb-4">Distribuciones principales soportadas</p>
+                    
+                    <div class="download-options">
+                        <a href="#" class="btn btn-primary w-100 mb-2 download-btn" data-download="Linux AppImage">
+                            <i class="fas fa-download me-2"></i>AppImage
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100 mb-2 download-btn" data-download="Linux DEB">
+                            <i class="fas fa-box me-2"></i>.deb (Ubuntu/Debian)
+                        </a>
+                        <a href="#" class="btn btn-outline-primary w-100 download-btn" data-download="Linux RPM">
+                            <i class="fas fa-box me-2"></i>.rpm (RHEL/Fedora)
+                        </a>
+                    </div>
+                    
+                    <div class="download-details mt-3">
+                        <small class="text-muted">
+                            Versión: 1.2.3<br>
+                            Tamaño: 148 MB<br>
+                            Requisitos: glibc 2.17+
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Installation Instructions -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Instrucciones de Instalación</h2>
+            <p class="lead">Guías paso a paso para cada plataforma</p>
+        </div>
+        
+        <!-- Installation Tabs -->
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <nav>
+                    <div class="nav nav-tabs justify-content-center" id="installTabs" role="tablist">
+                        <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows-install" type="button">
+                            <i class="fab fa-windows me-2"></i>Windows
+                        </button>
+                        <button class="nav-link" id="macos-tab" data-bs-toggle="tab" data-bs-target="#macos-install" type="button">
+                            <i class="fab fa-apple me-2"></i>macOS
+                        </button>
+                        <button class="nav-link" id="linux-tab" data-bs-toggle="tab" data-bs-target="#linux-install" type="button">
+                            <i class="fab fa-linux me-2"></i>Linux
+                        </button>
+                    </div>
+                </nav>
+                
+                <div class="tab-content mt-4" id="installTabsContent">
+                    <!-- Windows Instructions -->
+                    <div class="tab-pane fade show active" id="windows-install">
+                        <div class="install-instructions">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Instalación Rápida</h4>
+                                    <ol>
+                                        <li>Descarga el instalador de Windows</li>
+                                        <li>Ejecuta el archivo .exe descargado</li>
+                                        <li>Sigue las instrucciones del asistente</li>
+                                        <li>¡Listo! Cursor se abrirá automáticamente</li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Instalación desde Terminal</h4>
+                                    <div class="code-block">
+                                        <pre><code># Usando winget
+winget install cursor
+
+# Usando chocolatey
+choco install cursor</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- macOS Instructions -->
+                    <div class="tab-pane fade" id="macos-install">
+                        <div class="install-instructions">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Instalación Estándar</h4>
+                                    <ol>
+                                        <li>Descarga el archivo .dmg</li>
+                                        <li>Abre el archivo descargado</li>
+                                        <li>Arrastra Cursor a la carpeta Aplicaciones</li>
+                                        <li>Abre Cursor desde Launchpad</li>
+                                    </ol>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>Instalación con Homebrew</h4>
+                                    <div class="code-block">
+                                        <pre><code># Instalar Homebrew si no lo tienes
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# Instalar Cursor
+brew install --cask cursor</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Linux Instructions -->
+                    <div class="tab-pane fade" id="linux-install">
+                        <div class="install-instructions">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h4>Ubuntu/Debian (.deb)</h4>
+                                    <div class="code-block">
+                                        <pre><code># Descargar e instalar
+wget https://download.cursor.sh/cursor.deb
+sudo dpkg -i cursor.deb
+
+# Instalar dependencias si es necesario
+sudo apt-get install -f</code></pre>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h4>RHEL/Fedora (.rpm)</h4>
+                                    <div class="code-block">
+                                        <pre><code># Fedora
+sudo dnf install cursor.rpm
+
+# RHEL/CentOS
+sudo yum install cursor.rpm</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <h4>AppImage (Universal)</h4>
+                                    <div class="code-block">
+                                        <pre><code># Hacer ejecutable y ejecutar
+chmod +x cursor.AppImage
+./cursor.AppImage</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- System Requirements -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">Requisitos del Sistema</h2>
+            <p class="lead">Asegúrate de que tu sistema cumple con los requisitos mínimos</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-lg-4 mb-4">
+                <div class="requirement-card">
+                    <i class="fab fa-windows text-primary mb-3"></i>
+                    <h4>Windows</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>SO:</strong> Windows 10 v1903+ (64-bit)</li>
+                        <li><strong>RAM:</strong> 4 GB mínimo, 8 GB recomendado</li>
+                        <li><strong>Almacenamiento:</strong> 500 MB disponible</li>
+                        <li><strong>Procesador:</strong> Intel/AMD dual-core</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="requirement-card">
+                    <i class="fab fa-apple text-primary mb-3"></i>
+                    <h4>macOS</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>SO:</strong> macOS 10.15 Catalina+</li>
+                        <li><strong>RAM:</strong> 4 GB mínimo, 8 GB recomendado</li>
+                        <li><strong>Almacenamiento:</strong> 500 MB disponible</li>
+                        <li><strong>Procesador:</strong> Intel o Apple Silicon</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 mb-4">
+                <div class="requirement-card">
+                    <i class="fab fa-linux text-primary mb-3"></i>
+                    <h4>Linux</h4>
+                    <ul class="list-unstyled">
+                        <li><strong>SO:</strong> Ubuntu 18.04+, RHEL 8+</li>
+                        <li><strong>RAM:</strong> 4 GB mínimo, 8 GB recomendado</li>
+                        <li><strong>Almacenamiento:</strong> 500 MB disponible</li>
+                        <li><strong>Librerías:</strong> glibc 2.17+, GTK 3.20+</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Support Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold mb-3">¿Necesitas Ayuda?</h2>
+            <p class="lead">Estamos aquí para ayudarte con cualquier problema de instalación</p>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="support-item">
+                            <i class="fas fa-book fa-2x text-primary mb-3"></i>
+                            <h5>Documentación</h5>
+                            <p>Guías detalladas y tutoriales</p>
+                            <a href="#" class="btn btn-outline-primary">Ver Docs</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="support-item">
+                            <i class="fas fa-users fa-2x text-primary mb-3"></i>
+                            <h5>Comunidad</h5>
+                            <p>Únete a nuestra comunidad activa</p>
+                            <a href="#" class="btn btn-outline-primary">Ir al Foro</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 text-center mb-4">
+                        <div class="support-item">
+                            <i class="fas fa-headset fa-2x text-primary mb-3"></i>
+                            <h5>Soporte</h5>
+                            <p>Contacta nuestro equipo de soporte</p>
+                            <a href="#" class="btn btn-outline-primary">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.requirement-card, .support-item {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    height: 100%;
+}
+
+.requirement-card i, .support-item i {
+    font-size: 2.5rem;
+}
+
+.code-block {
+    background: #1e1e1e;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+}
+
+.code-block pre {
+    color: #ccc;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', monospace;
+    font-size: 0.875rem;
+}
+
+.install-instructions {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.detected-platform {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 15px 25px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.detected-platform i {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.primary-download .btn {
+    padding: 20px 40px;
+    font-size: 1.2rem;
+}
+
+.download-note {
+    opacity: 0.9;
+}
+
+.nav-tabs .nav-link {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+</style>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Auto-detect user's operating system
+document.addEventListener('DOMContentLoaded', function() {
+    const userAgent = navigator.userAgent.toLowerCase();
+    let detectedOS = 'Windows';
+    let osIcon = 'fab fa-windows';
+    
+    if (userAgent.includes('mac')) {
+        detectedOS = 'macOS';
+        osIcon = 'fab fa-apple';
+    } else if (userAgent.includes('linux')) {
+        detectedOS = 'Linux';
+        osIcon = 'fab fa-linux';
+    }
+    
+    // Update detected OS display
+    document.getElementById('detected-os').textContent = detectedOS;
+    document.getElementById('primary-os').textContent = detectedOS;
+    
+    // Update icon
+    const platformIcon = document.querySelector('.detected-platform i');
+    if (platformIcon) {
+        platformIcon.className = osIcon;
+    }
+    
+    // Update primary download button
+    const primaryBtn = document.querySelector('.primary-download .download-btn');
+    if (primaryBtn) {
+        primaryBtn.dataset.download = detectedOS;
+    }
+});
+
+// Download button analytics (placeholder)
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.download-btn') || e.target.closest('.download-btn')) {
+        const btn = e.target.matches('.download-btn') ? e.target : e.target.closest('.download-btn');
+        const platform = btn.dataset.download;
+        
+        // Here you would typically send analytics data
+        console.log('Download initiated for:', platform);
+        
+        // Show success message after delay
+        setTimeout(() => {
+            window.CursorClone.showNotification(`Iniciando descarga para ${platform}...`, 'success');
+        }, 500);
+    }
+});
+</script>
+{% endblock %} 

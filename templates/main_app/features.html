@@ -1,0 +1,382 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Features Hero -->
+<section class="features-section pt-5">
+    <div class="container">
+        <div class="row align-items-center" style="padding-top: 100px;">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold mb-4">Características Avanzadas</h1>
+                <p class="lead mb-4">
+                    Descubre todas las funcionalidades que hacen de Cursor el editor 
+                    de código más avanzado y productivo del mercado.
+                </p>
+                <a href="{% url 'main_app:download' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-download me-2"></i>Comenzar Ahora
+                </a>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-demo-visual">
+                    <div class="demo-window">
+                        <div class="window-header">
+                            <div class="window-controls">
+                                <span class="control close"></span>
+                                <span class="control minimize"></span>
+                                <span class="control maximize"></span>
+                            </div>
+                        </div>
+                        <div class="demo-content">
+                            <div class="demo-text">
+                                <span class="typing-effect">Cursor AI te ayuda a codificar...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Main Features Grid -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            {% for feature in features %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-{{ feature.icon }}"></i>
+                    </div>
+                    <h4 class="mb-3">{{ feature.title }}</h4>
+                    <p>{{ feature.description }}</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="{{ feature.icon }}">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            {% empty %}
+            <!-- Default features -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 class="mb-3">Asistente IA Avanzado</h4>
+                    <p>Genera código, explica funciones complejas y sugiere mejoras con nuestro asistente de IA de última generación.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="ai-assistant">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4 class="mb-3">Autocompletado Inteligente</h4>
+                    <p>Autocompletado contextual que entiende tu proyecto completo, no solo el archivo actual.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="autocomplete">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4 class="mb-3">Chat con tu Código</h4>
+                    <p>Conversa con tu base de código para entender, refactorizar y debuggear más eficientemente.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="code-chat">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h4 class="mb-3">Refactoring Automático</h4>
+                    <p>Mejora tu código automáticamente con sugerencias inteligentes de refactoring y optimización.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="refactoring">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h4 class="mb-3">Debug Inteligente</h4>
+                    <p>Encuentra y corrige bugs más rápido con asistencia de IA para debugging y análisis de errores.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="debugging">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4 class="mb-3">Colaboración en Tiempo Real</h4>
+                    <p>Trabaja en equipo con funciones de colaboración avanzadas y sincronización instantánea.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="collaboration">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h4 class="mb-3">Terminal Integrado</h4>
+                    <p>Terminal con autocompletado inteligente y sugerencias de comandos basadas en tu proyecto.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="terminal">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-git-alt"></i>
+                    </div>
+                    <h4 class="mb-3">Control de Versiones IA</h4>
+                    <p>Gestión de Git mejorada con mensajes de commit inteligentes y resolución automática de conflictos.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="git">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="feature-card h-100">
+                    <div class="feature-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="mb-3">Optimización de Performance</h4>
+                    <p>Análisis automático de performance y sugerencias para optimizar la velocidad de tu código.</p>
+                    <a href="#" class="btn btn-outline-primary" data-demo="performance">
+                        <i class="fas fa-play me-2"></i>Ver Demo
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Detailed Feature Sections -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center mb-5">
+            <div class="col-lg-6">
+                <h2 class="display-5 fw-bold mb-4">IA que Entiende tu Contexto</h2>
+                <p class="lead mb-4">
+                    No solo autocompletado básico. Nuestra IA analiza todo tu proyecto, 
+                    entiende las dependencias y te sugiere código relevante y preciso.
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Análisis de todo el proyecto</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Comprensión de arquitectura</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Sugerencias contextualmente relevantes</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Aprendizaje continuo de tus patrones</li>
+                </ul>
+            </div>
+            <div class="col-lg-6">
+                <div class="feature-showcase">
+                    <div class="showcase-item">
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <span class="code-lang">Python</span>
+                            </div>
+                            <pre><code>def process_user_data(users):
+    # Cursor sugiere automáticamente:
+    validated_users = []
+    for user in users:
+        if validate_user(user):
+            validated_users.append(user)
+    return validated_users</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2">
+                <h2 class="display-5 fw-bold mb-4">Debugging Inteligente</h2>
+                <p class="lead mb-4">
+                    Identifica problemas antes de que ocurran y recibe sugerencias 
+                    específicas para resolverlos rápidamente.
+                </p>
+                <ul class="list-unstyled">
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Detección proactiva de errores</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Explicaciones detalladas de bugs</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Sugerencias de corrección automática</li>
+                    <li class="mb-2"><i class="fas fa-check text-primary me-2"></i>Análisis de rendimiento en tiempo real</li>
+                </ul>
+            </div>
+            <div class="col-lg-6 order-lg-1">
+                <div class="feature-showcase">
+                    <div class="error-detection-demo">
+                        <div class="error-item">
+                            <i class="fas fa-exclamation-triangle text-warning"></i>
+                            <span>Posible null pointer exception en línea 45</span>
+                        </div>
+                        <div class="suggestion-item">
+                            <i class="fas fa-lightbulb text-primary"></i>
+                            <span>Añadir validación null antes del acceso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h2 class="display-4 fw-bold mb-4">Experimenta el Futuro del Desarrollo</h2>
+                <p class="lead mb-4">
+                    No te quedes atrás. Únete a la revolución de la programación con IA 
+                    y transforma tu manera de desarrollar software.
+                </p>
+                <div class="cta-buttons">
+                    <a href="{% url 'main_app:download' %}" class="btn btn-primary btn-lg me-3">
+                        <i class="fas fa-download me-2"></i>Descargar Cursor
+                    </a>
+                    <a href="{% url 'main_app:pricing' %}" class="btn btn-outline-primary btn-lg">
+                        <i class="fas fa-tag me-2"></i>Ver Precios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+.feature-demo-visual {
+    text-align: center;
+}
+
+.demo-window {
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.window-header {
+    background: #333;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+.window-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.control.close { background: #ff5f57; }
+.control.minimize { background: #ffbd2e; }
+.control.maximize { background: #28ca42; }
+
+.demo-content {
+    padding: 20px;
+    color: #fff;
+    font-family: 'Monaco', monospace;
+}
+
+.typing-effect {
+    border-right: 2px solid #6c5ce7;
+    animation: typing 3s steps(30) infinite, blink 1s infinite;
+}
+
+@keyframes typing {
+    0%, 100% { width: 0; }
+    50% { width: 100%; }
+}
+
+@keyframes blink {
+    0%, 50% { border-color: transparent; }
+    51%, 100% { border-color: #6c5ce7; }
+}
+
+.feature-showcase {
+    position: relative;
+}
+
+.code-preview {
+    background: #1e1e1e;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.code-header {
+    background: #333;
+    padding: 10px 15px;
+    color: #ccc;
+    font-size: 0.875rem;
+}
+
+.code-preview pre {
+    margin: 0;
+    padding: 20px;
+    color: #ccc;
+    background: transparent;
+}
+
+.error-detection-demo {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.error-item, .suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.error-item {
+    background: #fff3cd;
+    border-left: 4px solid #ffc107;
+}
+
+.suggestion-item {
+    background: #d1ecf1;
+    border-left: 4px solid #17a2b8;
+}
+
+.error-item i, .suggestion-item i {
+    margin-right: 10px;
+}
+</style>
+{% endblock %} 
